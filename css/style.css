@@ -3,11 +3,15 @@ body{
   font-size: 14px;
   color: #0A143A;
 }
-/* Header styles start */
-header{
+.container{
   max-width: 1146px;
   margin: auto;
+}
+/* Header styles start */
+header{
   padding-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom: 12px;
 }
 .navbar{
   display: flex;
@@ -64,6 +68,7 @@ margin-right: 14px;
   padding-left: 22px;
   padding-right: 22px;
 }
+/* Кнопки */
 .search-button{
   background: #256EEB;
   border:none;
@@ -76,3 +81,124 @@ margin-right: 14px;
 .search-button-text{
   margin-left: 5px;
 }
+/* Header styles end */
+
+/* Page content start */
+
+.page-content{ /* Создали сетку*/
+  display: grid;
+  grid-template-columns: 9fr 3fr; /* 9 для main 3 для  sidebar`a*/
+  grid-column-gap: 30px;
+}
+/* main*/
+.card-image{ /* настройка картинок*/
+  border-radius: 10px;
+  width: 264px;
+  height: 178px;
+  object-fit: cover; /* Если картинка не подходит под размер 264/178 то обрезается*/
+}
+.cards{ /*настройка контента сеткой по 3*/
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card{
+  margin-bottom: 20px;
+}
+.card:not(:nth-child(3n)){
+  margin-right: 20px;
+}
+.card-title{
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  color: #256EEB;
+  max-width: 225px; /*если тайтл длинный, что-бы не перебрасывало в некст ряд*/
+  margin-top: 12px;
+  margin-bottom: 5px;
+}
+.card-header{ /*разводим текст и лайк*/
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+}
+.like{
+  background-color: #fff;
+  border:none;
+  cursor: pointer;
+  margin-left: 15px;
+}
+.card-link{
+  text-decoration: none;
+}
+.card-price{
+  font-size: 16px;
+  line-height: 19px;
+  margin-bottom: 10px;
+  display: block;
+}
+.card-text{
+  font-size: 14px;
+  line-height: 16px;
+  color: #C4C4C4;
+  margin-top: 0;
+  margin-bottom: 4px;
+}
+
+/* Side-bar styles*/
+.service{
+  margin-bottom: 25px;
+}
+.page-title{
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+}
+.service-title{
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  color: #0A143A;
+  margin-top: 7px;
+  margin-bottom: 5px;
+}
+.service-text{
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #0A143A;
+  max-width: 217px;
+}
+/* footer */
+.footer-text{
+  font-size: 14px;
+  line-height: 16px;
+  color:#C4C4C4;
+  display: block;
+  margin-bottom: 5px;
+}
+.footer-menu{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  margin-bottom: 16px;
+}
+.footer-menu-item{
+  
+}
+.footer-menu-text{
+  text-decoration: none;
+  color:#C4C4C4;
+}
+.footer-link{
+  color:inherit;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 5px;
+}
+/* Page content end */
+
+
+
+
+
