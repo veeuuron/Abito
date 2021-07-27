@@ -171,6 +171,7 @@ margin-right: 14px;
 }
 /* footer */
 .footer-text{
+  display: inline-block;
   font-size: 14px;
   line-height: 16px;
   color:#C4C4C4;
@@ -183,17 +184,14 @@ margin-right: 14px;
   list-style: none;
   margin-bottom: 16px;
 }
-.footer-menu-item{
-  
-}
 .footer-menu-text{
   text-decoration: none;
   color:#C4C4C4;
 }
 .footer-link{
-  color:#C4C4C4;
+  color:inherit;
   text-decoration: none;
-  display: block;
+  display: inline-block;
   margin-bottom: 5px;
 }
 /* Page content end */
