@@ -19,6 +19,11 @@ header{
   justify-content: space-between;
   margin-bottom: 24px;
 }
+.navbar-panel{
+  flex-grow: 1; /* Растянуть по ширине */
+  display: flex; 
+  align-items: center;
+}
 /* navigation */
 .navbar-menu{
  margin-right: auto; 
@@ -94,7 +99,7 @@ margin-right: 14px;
 .page-content{ /* Создали сетку*/
   display: grid;
   grid-template-columns: 9fr 3fr; /* 9 для main 3 для  sidebar`a*/
-  grid-column-gap: 30px;
+  grid-column-gap: 10px;
 }
 /* main*/
 .card-image{ /* настройка картинок*/
@@ -110,9 +115,7 @@ margin-right: 14px;
 
 .card{
   margin-bottom: 20px;
-}
-.card:not(:nth-child(3n)){
-  margin-right: 20px;
+  margin-right: 15px;
 }
 .card-title{
   font-weight: bold;
@@ -328,3 +331,115 @@ border-radius: 5px;
 .myrekl{
   margin-bottom: 7px;
 }
+/*Кнопка меню*/
+.menu-button{
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  display: none; /* Отключаем и включаем только на тел.экранах*/
+}
+.close-menu{
+  display: none;
+}
+/*Кнопка меню*/
+
+/* media*/
+@media (max-width: 1200px){
+  .container{
+    max-width: 960px;
+  }
+  .card{
+    width: 45%;
+  }
+  .card-image{
+    width: 100%;
+    height: 200px ;
+  }
+  }
+  @media (max-width: 992px){
+   .container{
+     max-width: 740px;
+   }
+   .card-image{
+     height: 150px;
+   }
+  }
+  @media (max-width: 768px){
+    .container{
+      max-width:560px;
+    }
+    .card{
+      width: 100%;
+    }
+    .page-content{
+      grid-template-columns: 8fr 4fr;
+    }
+    .card-image{
+      height: 200px;
+    }
+    .menu-button{
+      display: block;
+    }
+    .close-menu{
+      display: block;
+      position: absolute;
+      right: 30px;
+      top: 30px;
+      cursor: pointer;
+      background-color: #fff;
+      border: 0;
+    }
+    .navbar-panel{
+      position:fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      z-index: 9;
+      flex-direction: column; /* выстроить по колонкам*/
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s, opacity 0.2s;
+      opacity: 0;
+      transform: translateX(100%) /* Убераем меню в сторону (его не видно) */;
+    }
+    .is-open{
+      transform: translateX(0%);
+      opacity :1;
+    }
+    .navbar-menu{
+      margin-left: auto; /* т.к уже есть mr:auto  при добавлении ml:auto контент будет по середине*/
+      margin-bottom: 20px;
+    }
+    .menu{
+      flex-direction: column; /* Для того, чтобы всё было в стобик*/
+      align-items: center;
+      justify-content: center;
+    }
+    .menu-item:not(:last-child){
+      margin-right: 0;
+      margin-bottom: 8px;
+      }
+      .button-group{
+        display: flex;
+        flex-direction: column;
+      }
+  }
+  @media (max-width: 576px){
+    .container{
+      max-width: 90%;
+    }
+    .page-content{
+      grid-template-columns: 12fr;
+    }
+    .card-image{
+      height: 250px;
+    }
+    .card{
+      margin-right:0;
+    }
+    .search-button-text{
+      display: none;
+    }
+  }
